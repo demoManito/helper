@@ -3,11 +3,12 @@ package conversion
 import (
 	"bytes"
 	encodingjson "encoding/json"
-	"helper/handler/command"
 	"log"
 
 	"github.com/atotto/clipboard"
 	"github.com/spf13/cobra"
+
+	"helper/handler/command"
 )
 
 var json command.ICommand = new(JsonFormat)
@@ -31,9 +32,10 @@ func (j *JsonFormat) Run() command.CmdFunc {
 func (j *JsonFormat) run(cmd *cobra.Command, args []string) {
 	var jsonFormat bytes.Buffer
 	if err := encodingjson.Indent(&jsonFormat, []byte(args[0]), "", "  "); err != nil {
-		clipboard.WriteAll("error json")
 		log.Printf("err json %s %s", err, jsonFormat.String())
 		return
 	}
-	clipboard.WriteAll(jsonFormat.String())
+	if err := clipboard.WriteAll(jsonFormat.String()); err != nil {
+		log.Printf("剪切板意外退出 %s", err)
+	}
 }

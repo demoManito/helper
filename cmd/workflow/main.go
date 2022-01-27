@@ -7,8 +7,9 @@ import (
 	"github.com/spf13/cobra"
 
 	"helper/globa"
-	_ "helper/workflow/conversion" // 转换相关
-	_ "helper/workflow/crack"      // 破解相关
+	_ "helper/workflow/conversion"   // 转换相关
+	_ "helper/workflow/crack"        // workflow list
+	_ "helper/workflow/workflowlist" // 破解相关
 )
 
 var rootCmd = &cobra.Command{
@@ -18,6 +19,6 @@ var rootCmd = &cobra.Command{
 
 func main() {
 	if err := workflow.Execute(rootCmd); err != nil {
-		log.Fatal("init ", err)
+		log.Fatal("workflow init ", err)
 	}
 }

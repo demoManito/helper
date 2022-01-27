@@ -4,6 +4,7 @@ go 1.17
 
 require (
 	github.com/atotto/clipboard v0.1.4
+	github.com/cavaliergopher/grab/v3 v3.0.1
 	github.com/deanishe/awgo v0.29.1
 	github.com/jinzhu/gorm v1.9.16
 	github.com/spf13/cobra v1.3.0

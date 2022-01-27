@@ -14,7 +14,7 @@ cm:
 	@cd cmd/command && go build -o helper && cd - &> /dev/null
 
 wf:
-	@cd cmd/workflow && go build -o helperwf && cd - &> /dev/null
+	@cd cmd/workflow && go build -o helper && cd - &> /dev/null
 
 .PHONY: install-cm
 install-cm: cm
