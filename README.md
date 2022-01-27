@@ -1,6 +1,8 @@
 # <img src='static/icon.png' width='70' align='center' alt='icon'> helper
 ![](https://img.shields.io/badge/license-MIT-green)  ![](https://img.shields.io/badge/platform-MacOS-purple) ![](https://img.shields.io/badge/language-Go-blue)
 
+[点击下载](https://github.com/demoManito/helper/releases/download/v1.1.0/helper.alfredworkflow)
+
 ## workflow search
 ![img.png](static/readme/workflowlist.png)
 
