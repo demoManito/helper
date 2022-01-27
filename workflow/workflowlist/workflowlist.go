@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/url"
 	"os"
+	"os/exec"
 	"strings"
 	"time"
 
@@ -92,7 +93,6 @@ func (w *WorkflowList) initData() error {
 		for _, item := range w.workflows {
 			item.makeQuery()
 		}
-
 		if err = wf.Cache.Store(cacheKey, data); err != nil {
 			return err
 		}
@@ -131,10 +131,15 @@ func (w *WorkflowList) loadData() error {
 	}
 	duration, _ := wf.Cache.Age(cacheKey)
 	if duration > 10*time.Minute {
-		go func() {
-			w.initData()
-			w.cacheAllImage()
-		}()
+		// 后台下载
+		bgCmd := exec.Command("./helper", refreshCacheUse)
+		if !wf.IsRunning(refreshCacheUse) {
+			log.Printf("[DEBUG] start run in background [%s]\n", bgCmd.String())
+			err := wf.RunInBackground(refreshCacheUse, bgCmd)
+			if err != nil {
+				log.Printf("[ERROR] run in background failed [%s]:[%s]\n", bgCmd.String(), err.Error())
+			}
+		}
 	}
 	return nil
 }
