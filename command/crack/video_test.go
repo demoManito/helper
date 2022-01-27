@@ -1,8 +1,6 @@
 package crack
 
-import (
-	"testing"
-)
+import "testing"
 
 func TestOpenBrowser(t *testing.T) {
 	v := new(Video)

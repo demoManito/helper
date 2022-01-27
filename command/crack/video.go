@@ -2,7 +2,6 @@ package crack
 
 import (
 	"fmt"
-	"helper/handler/command"
 	"log"
 	"os/exec"
 	"runtime"
@@ -12,6 +11,7 @@ import (
 	"github.com/thoas/go-funk"
 
 	"helper/globa"
+	"helper/handler/command"
 )
 
 var (

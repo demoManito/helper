@@ -1,15 +1,16 @@
 package main
 
 import (
-	"helper/handler/workflow"
 	"log"
 
 	"github.com/spf13/cobra"
 
 	"helper/globa"
+	"helper/handler/workflow"
+
 	_ "helper/workflow/conversion"   // 转换相关
-	_ "helper/workflow/crack"        // workflow list
-	_ "helper/workflow/workflowlist" // 破解相关
+	_ "helper/workflow/crack"        // 破解相关
+	_ "helper/workflow/workflowlist" // workflow list
 )
 
 var rootCmd = &cobra.Command{

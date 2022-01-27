@@ -2,7 +2,6 @@ package search
 
 import (
 	"fmt"
-	"helper/handler/command"
 	"log"
 	"os/exec"
 	"runtime"
@@ -10,6 +9,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"helper/globa"
+	"helper/handler/command"
 )
 
 const (

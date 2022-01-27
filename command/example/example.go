@@ -2,11 +2,12 @@ package example
 
 import (
 	"fmt"
-	"helper/handler/command"
 	"os"
 	"os/exec"
 
 	"github.com/spf13/cobra"
+
+	"helper/handler/command"
 )
 
 func init() {

@@ -1,13 +1,14 @@
 package conversion
 
 import (
-	"helper/handler/command"
 	"regexp"
 	"strings"
 
 	"github.com/atotto/clipboard"
 	"github.com/jinzhu/gorm"
 	"github.com/spf13/cobra"
+
+	"helper/handler/command"
 )
 
 const (
